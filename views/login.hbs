@@ -1,0 +1,98 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UpMarkit</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Anton|Roboto:900,400' rel='stylesheet' type='text/css'>
+  </head>
+  <style type="text/css">
+  .row {
+    width: 80%;
+  }
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: #262626
+  }
+  h1 {
+    color: #fff;
+  }
+  .panel.b {
+    margin-top: 20px;
+    padding-top: 30px;
+    font-family: 'Open Sans', sans-serif;
+    background: #4F4F4F;
+    border: hidden;
+  }
+  .panel h3, .panel p, .row p {
+    color: #CACACA;
+  }
+  img {
+    margin-top: 10px;
+  }
+  .small {
+    background-color: #0074FF;
+  }
+  .panel h3, .row h3 {
+    color: #CACACA;
+    font-family: 'Roboto', sans-serif;
+    font-weight:800;
+  }
+  input[type="text"], input[type="password"] {
+    background-color: #6F6F6F; 
+    border-width: 3px;
+    border-color: #333333
+  }
+  input[type="text"]:focus, input[type="password"]:focus {
+    background-color: #858585; 
+    border-width: 3px;
+    border-color: #333333
+  }
+
+  </style>
+  <body>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <img src="logo.png" width="200px">
+      </div>
+    </div>
+    
+        <div class="panel b">
+          <div class="row">
+          <h3>Signup to Up<div style="display: inline-block; color: #0082FF">Mark</div>It<br>{{err}}</h3>
+          <form action="/register" method="post">
+            <div class="row">
+              <div class="large-6 columns">
+                  <input name="username" type="text" placeholder="Username" />
+                  <input name="password" type="password" placeholder="Password" />
+                  <button class="small button">Sign Up</button>
+              </div>
+            </div>
+          </form>
+          </div>
+        </div>
+
+        <div class="row">
+          <h3>Log<div style="display: inline-block; color: #0082FF">in</div></h3>
+          <form action="/login" method="post">
+            <div class="row">
+              <div class="large-6 columns">
+                  <input name="username" type="text" placeholder="Username" />
+                  <input name="password" type="password" placeholder="Password" />
+                  <button class="small button">Login</button>
+              </div>
+            </div>
+          </form>
+          </div>
+    
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
