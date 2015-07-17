@@ -59,15 +59,15 @@ body {
 }*/
 #cat {
     height: 66%;
-    overflow: hidden;
+    overflow: auto;
     left: 0;
     right: 0;
     top: 60px;
     bottom: 60px;
 }
-#cat:hover {
-    overflow: auto;
-}
+/*#cat:hover {*/
+    /*overflow: auto;*/
+/*}*/
 .element:hover {
     color: #39A0DD;
     transition-duration: 0.3s;
