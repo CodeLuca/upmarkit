@@ -30,7 +30,6 @@ body {
     box-shadow: 4px 0px 20px 0px #131313;
     transition-duration: 0.3s;
     /*float: left;*/
-    
     overflow: hidden;
     position: fixed;
     /*height: 100%;*/
@@ -66,12 +65,13 @@ body {
     bottom: 60px;
 }
 #cat:hover {
+    -webkit-overflow-scrolling: touch;
     overflow: auto;
 }
-/*.element:hover {
+.element:hover {
     color: #39A0DD;
     transition-duration: 0.3s;
-}*/
+}
 h2 {
     transition-duration: 0.3s;
     font-size: 200%;
