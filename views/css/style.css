@@ -45,7 +45,7 @@ body {
     padding-top: 10px;
     padding-right: 40px;
 }
-#cat::-webkit-scrollbar {
+/*#cat::-webkit-scrollbar {
     width: 1em;
 }
  
@@ -56,7 +56,7 @@ body {
 #cat::-webkit-scrollbar-thumb, #content::-webkit-scrollbar-thumb{
   background-color: #338DD5;
   /*outline: 1px solid slategrey;*/
-}
+}*/
 #cat {
     height: 66%;
     overflow: hidden;
