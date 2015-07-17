@@ -45,7 +45,7 @@ body {
     padding-top: 10px;
     padding-right: 40px;
 }
-/*#cat::-webkit-scrollbar {
+#cat::-webkit-scrollbar {
     width: 1em;
 }
  
@@ -56,22 +56,22 @@ body {
 #cat::-webkit-scrollbar-thumb, #content::-webkit-scrollbar-thumb{
   background-color: #338DD5;
   /*outline: 1px solid slategrey;*/
-}*/
+}
 #cat {
     height: 66%;
-    overflow: auto;
+    overflow: hidden;
     left: 0;
     right: 0;
     top: 60px;
     bottom: 60px;
 }
-/*#cat:hover {*/
-    /*overflow: auto;*/
-/*}*/
-.element:hover {
+#cat:hover {
+    overflow: auto;
+}
+/*.element:hover {
     color: #39A0DD;
     transition-duration: 0.3s;
-}
+}*/
 h2 {
     transition-duration: 0.3s;
     font-size: 200%;
