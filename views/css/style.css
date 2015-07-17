@@ -59,6 +59,7 @@ body {
   /*outline: 1px solid slategrey;*/
 }
 #cat {
+    -webkit-overflow-scrolling: touch;
     height: 66%;
     overflow: hidden;
     left: 0;
@@ -107,7 +108,7 @@ h2:hover {
     padding-right: 1em;
     padding-bottom: 80px;
     /*margin-top: 1em;*/
-    overflow: hidden;
+    /*overflow: ;*/
     transition-duration: 0.3s;
 }
 p {
