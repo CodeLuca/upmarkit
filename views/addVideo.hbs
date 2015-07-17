@@ -1,0 +1,103 @@
+<head>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<div id="sidebar">
+  <ul class="nav-elements">
+    <!-- <img src="img/logo.png" id="logo">-->
+    <a href="#" class="link"><h1 class="name">Up<div class="mark">Mark</div>it</h1></a>
+        <hr style="width:80%; margin-right: 100px; margin-top: 0px; margin-bottom: 20px">
+    <div id="cat">
+    <a href="/cat/topvideos" class="link">
+      <li class="element">Top Videos</li>
+    </a>
+    <br>
+    <a href="/cat/comedy" class="link">
+      <li class="element">Comedy</li>
+    </a>
+    <br>
+    <a href="/cat/sports" class="link">
+      <li class="element">Sports</li>
+    </a>
+    <br>
+    <a href="/cat/music" class="link">
+      <li class="element">Music</li>
+    </a>
+    <br>
+    <a href="/cat/gaming" class="link">
+      <li class="element">Gaming</li>
+    </a>
+    <br>
+    <a href="/cat/kids" class="link">
+      <li class="element">Kids</li>
+    </a>
+    <br>
+    <a href="/cat/news" class="link">
+      <li class="element">News</li>
+    </a>
+    <br>
+    <a href="/cat/animation" class="link">
+      <li class="element">Animation</li>
+    </a>
+    <br>
+    <a href="/cat/education" class="link">
+      <li class="element">Education</li>
+    </a>
+    </div>
+    <br>
+    <hr style="width:80%; margin-right: 100px; margin-top: 20px; margin-bottom: 20px">
+    <a href="/cat/favorites" class="link">
+      <li class="element">Favorites</li>
+    </a>
+
+  </ul>
+</div>
+<header id="header">
+  <!--<img src="img/minilogo.png" id="minilogo">-->
+  <input type="checkbox" name="toggle" id="toggle" onchange='handleChange(this)' unchecked>
+  <label for="toggle"></label>
+</header>
+<div id="content">
+  <h2>This is some body text.</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a malesuada erat, a ornare tellus. Suspendisse posuere eu ex in rhoncus. Suspendisse ac neque nec tortor mattis blandit. Fusce a nisl quam. Pellentesque vel vulputate orci, at porttitor
+    felis. Nunc at lectus ante. Aenean consectetur vitae erat vitae imperdiet. Phasellus ornare metus eu consequat consectetur.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a malesuada erat, a ornare tellus. Suspendisse posuere eu ex in rhoncus. Suspendisse ac neque nec tortor mattis blandit. Fusce a nisl quam. Pellentesque vel vulputate orci, at porttitor
+    felis. Nunc at lectus ante. Aenean consectetur vitae erat vitae imperdiet. Phasellus ornare metus eu consequat consectetur.</p>
+<div id="footer">
+      <a href="/cat/animation" class="link">
+        <li class="element e">My Account</li>
+      </a>
+       <!-- <div class="hr">&nbsp;</div> -->
+      <a href="/cat/animation" class="link">
+      <li class="element e">Add a Video</li>
+    </a>
+      <a href="/cat/animation" class="link">
+      <li class="element e">Settings</li>
+    </a>
+</div>
+</div>
+
+<script type="text/javascript">
+function handleChange(cb) {
+  if (cb.checked == true) {
+    document.getElementById("sidebar").style.left = "0em";
+  } else {
+    document.getElementById("sidebar").style.left = "-19em";
+  }
+}
+
+window.onresize = function rs() {
+  var cb = document.getElementById("toggle");
+  if (window.matchMedia("(max-width: 800px)").matches && cb.checked == false) {
+    document.getElementById("sidebar").style.left = "-20em";
+  }
+  if (window.matchMedia("(min-width:800px)").matches && cb.checked == true) {
+    document.getElementById("sidebar").style.left = "0em";
+    cb.checked = false;
+  }
+  if (window.matchMedia("(min-width:800px)").matches && cb.checked == false) {
+    document.getElementById("sidebar").style.left = "0em";
+
+  }
+
+}
+</script>

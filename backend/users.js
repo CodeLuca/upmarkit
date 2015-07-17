@@ -35,7 +35,7 @@ module.exports = function(app, db) {
 			var obj = {
 				'username': req.body.username,
 				'password': req.body.password,
-				'voteList': [],
+				'votes': [],
 				'videos': []
 			}
 			db.users.insert(obj, function(err){
