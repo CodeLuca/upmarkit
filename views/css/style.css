@@ -107,7 +107,7 @@ h2:hover {
     padding-right: 1em;
     padding-bottom: 80px;
     /*margin-top: 1em;*/
-    overflow: auto;
+    overflow: hidden;
     transition-duration: 0.3s;
 }
 p {
