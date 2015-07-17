@@ -174,7 +174,7 @@ input[type=checkbox]:checked + label {
     margin: 0em;
     font-size: 150%;
     line-height: 2em;
-    width: 100%;
+    /*width: 100%;*/
     color: #eee;
     transition-duration: 0.3s;
 }
