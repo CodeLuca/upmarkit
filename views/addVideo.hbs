@@ -43,12 +43,7 @@
       <li class="element">Education</li>
     </a>
     </div>
-    <br>
     <hr style="width:80%; margin-right: 100px; margin-top: 20px; margin-bottom: 20px">
-    <a href="/cat/favorites" class="link">
-      <li class="element">Favorites</li>
-    </a>
-
   </ul>
 </div>
 <header id="header">
@@ -66,12 +61,14 @@
       <a href="/cat/animation" class="link">
         <li class="element e">My Account</li>
       </a>
-       <!-- <div class="hr">&nbsp;</div> -->
       <a href="/cat/animation" class="link">
       <li class="element e">Add a Video</li>
     </a>
       <a href="/cat/animation" class="link">
       <li class="element e">Settings</li>
+    </a>
+    <a href="/cat/favorites" class="link">
+      <li class="element e">Favorites</li>
     </a>
 </div>
 </div>
@@ -87,14 +84,14 @@ function handleChange(cb) {
 
 window.onresize = function rs() {
   var cb = document.getElementById("toggle");
-  if (window.matchMedia("(max-width: 800px)").matches && cb.checked == false) {
+  if (window.matchMedia("(max-width: 1000px)").matches && cb.checked == false) {
     document.getElementById("sidebar").style.left = "-20em";
   }
-  if (window.matchMedia("(min-width:800px)").matches && cb.checked == true) {
+  if (window.matchMedia("(min-width: 1000px)").matches && cb.checked == true) {
     document.getElementById("sidebar").style.left = "0em";
     cb.checked = false;
   }
-  if (window.matchMedia("(min-width:800px)").matches && cb.checked == false) {
+  if (window.matchMedia("(min-width:1000px)").matches && cb.checked == false) {
     document.getElementById("sidebar").style.left = "0em";
 
   }
