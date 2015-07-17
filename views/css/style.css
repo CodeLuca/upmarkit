@@ -1,280 +1,282 @@
 @import url(http://fonts.googleapis.com/css?family=Josefin+Sans|Josefin+Sans);
-  body {
-      font-family: 'Josefin Sans', sans-serif;
-      margin: 0em;
-      background-color: #eee;
-  }
- .hr {width:2px;height:150px;background-color:#fff;position:absolute;top:0px;margin-left:600px;}
-  #footer li {
-      list-style-type: none;
-      font-size: 30px;
-  }
-  #sidebar li {
-      font-size: 35px;
-      line-height: 50px;
-  }
-  #sidebar {
-      background-image: url("../img/bg.png");
-      color: #aaa;
-      float: left;
-      position: absolute;
-      width: 15em;
-      position: fixed;
-      background-color: #000;
-      box-shadow: 4px 0px 20px 0px #131313;
-      transition-duration: 0.3s;
-      /*float: left;*/
-      overflow: hidden;
-      position: absolute;
-      /*height: 100%;*/
-        top:0; bottom:0; /* Basically like height:100%; */
-      z-index: 9998;
-  }
-  .e {
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0em;
+    background-color: #eee;
+}
+.hr {
+    width: 2px;
+    height: 150px;
+    background-color: #fff;
+    position: absolute;
+    top: 0px;
+    margin-left: 600px;
+}
+#footer li {
+    list-style-type: none;
+    font-size: 30px;
+}
+#sidebar li {
+    font-size: 35px;
+    line-height: 50px;
+}
+#sidebar {
+    background-image: url("../img/bg.png");
+    color: #aaa;
+    float: left;
+    position: absolute;
+    width: 15em;
+    position: fixed;
+    background-color: #000;
+    box-shadow: 4px 0px 20px 0px #131313;
+    transition-duration: 0.3s;
+    /*float: left;*/
+    
+    overflow: hidden;
+    position: absolute;
+    /*height: 100%;*/
+    
+    top: 0;
+    bottom: 0;
+    /* Basically like height:100%; */
+    
+    z-index: 9998;
+}
+.e {
     padding-top: 10px;
-    padding-right: 40px; 
-  }
-  #cat {
+    padding-right: 40px;
+}
+#cat {
     height: 66%;
     overflow: auto;
-  left:0; right:0;
-  top:60px; bottom:60px;
-  }
-
-  .element:hover {
-      color: #39A0DD;
-      transition-duration: 0.3s;
-  }
-  h2 {
-      transition-duration: 0.3s;
-      font-size: 200%;
-      font-weight: bolder;
-  }
-  h2:hover {
-      color: white;
-      transition-duration: 0.3s;
-  }
-  .other {
+    left: 0;
+    right: 0;
+    top: 60px;
+    bottom: 60px;
+}
+.element:hover {
+    color: #39A0DD;
+    transition-duration: 0.3s;
+}
+h2 {
+    transition-duration: 0.3s;
+    font-size: 200%;
+    font-weight: bolder;
+}
+h2:hover {
+    color: white;
+    transition-duration: 0.3s;
+}
+.other {
     height: 60px;
-  }
-  #header {
-      background-image: url("../img/bg.png");
-      position: fixed;
-      height: 4em;
-      width: 100%;
-      transition-duration: 0.3s;
-      top: -5em;
-      box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.55);
-      z-index: 9997;
-  }
-  #content {
-      position: fixed;
-      height: 100%;
-      margin-left:auto;
-      margin-right:auto;
-      top:0; bottom:0;
-      padding-left: 15em;
-      padding-right: 2em;
-      padding-bottom: 2em;
-      margin-top: 1em;
-      overflow: auto;
-      transition-duration: 0.3s;
-  }
-  p {
-      font-size: 1.25em;
-  }
-  .link {
-      display: inline-block;
-      text-decoration: none;
-  }
-  input[type=checkbox] {
-      display: none;
-  }
-  input[type=checkbox] + label {
-      background: url('http://dicrc.in/images/menu_icon.png') no-repeat;
-      width: 40px;
-      height: 40px;
-      position: relative;
-      right: 0.25em;
-      top: 0.5em;
-      padding: 0.25em;
-      float: right;
-      z-index: 99999;
-  }
-  input[type=checkbox]:checked + label {
-      background: url('http://www.bathchristmasmarket.co.uk/wp-content/themes/bathxmas/images/ui/buttons/icon-close.png') no-repeat;
-      position: relative;
-      width: 40px;
-      height: 40px;
-      right: 0.25em;
-      top: 0.5em;
-      padding: 0.25em;
-      float: right;
-      z-index: 99999;
-  }
-  @media(max-width:1000px) {
-      #footer li {
-          line-height: 17px;
-          padding-top: 15px;
-          list-style-type: none;
-          font-size: 19px;
-      }
-      #content {
-          padding-left: 0px;
-          margin-top: 5em;
-          transition-duration: 0.3s;
-      }
-      #header {
-          background-image: url("../img/bg.png");
-          top: 0em;
-          transition-duration: 0.3s;
-      }
-      #footer {
-          font-size: 7px;
-          background-image: url("../img/bg.png");
-          width: 100%;
-          margin: 0%;
-      }
-  }
-  .nav-elements {
-      /*overflow: scroll;*/
-      list-style-type: none;
-  }
-  .element {
-      margin: 0em;
-      font-size: 150%;
-      line-height: 2em;
-      width: 100%;
-      color: #eee;
-      transition-duration: 0.3s;
-  }
-  .name,
-  .element {
-      color: #eee;
-  }
-  .btxt {
-      color: #111;
-  }
-  .toggle {
-      position: relative;
-  }
-  #footer {
-      text-align: center;
-      position: fixed;
-      left: 0px;
-      bottom: 0px;
-      height: 80px;
-      background-image: url("../img/bg.png");
-      box-shadow: 4px 0px 20px 0px #131313;
-      color: #fff;
-  }
-  @media(min-width:1000px) {
-      #footer {
+}
+#header {
+    background-image: url("../img/bg.png");
+    position: fixed;
+    height: 4em;
+    width: 100%;
+    transition-duration: 0.3s;
+    top: -5em;
+    box-shadow: 0px 10px 20px 0px rgba(50, 50, 50, 0.55);
+    z-index: 9997;
+}
+#content {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    padding-left: 15em;
+    padding-right: 1em;
+    padding-bottom: 2em;
+    margin-top: 1em;
+    overflow: auto;
+    transition-duration: 0.3s;
+}
+p {
+    font-size: 1.25em;
+}
+.link {
+    display: inline-block;
+    text-decoration: none;
+}
+input[type=checkbox] {
+    display: none;
+}
+input[type=checkbox] + label {
+    background: url('http://dicrc.in/images/menu_icon.png') no-repeat;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    right: 0.25em;
+    top: 0.5em;
+    padding: 0.25em;
+    float: right;
+    z-index: 99999;
+}
+input[type=checkbox]:checked + label {
+    background: url('http://www.bathchristmasmarket.co.uk/wp-content/themes/bathxmas/images/ui/buttons/icon-close.png') no-repeat;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    right: 0.25em;
+    top: 0.5em;
+    padding: 0.25em;
+    float: right;
+    z-index: 99999;
+}
+@media(max-width:1000px) {
+    #footer li {
+        line-height: 17px;
+        padding-top: 15px;
+        list-style-type: none;
+        font-size: 19px;
+    }
+    #content {
+        padding-left: 0px;
+        margin-top: 5em;
+        transition-duration: 0.3s;
+    }
+    #header {
+        background-image: url("../img/bg.png");
+        top: 0em;
+        transition-duration: 0.3s;
+    }
+    #footer {
+        font-size: 7px;
+        background-image: url("../img/bg.png");
+        width: 100%;
+        margin: 0%;
+    }
+}
+.nav-elements {
+    /*overflow: scroll;*/
+    
+    list-style-type: none;
+}
+.element {
+    margin: 0em;
+    font-size: 150%;
+    line-height: 2em;
+    width: 100%;
+    color: #eee;
+    transition-duration: 0.3s;
+}
+.name,
+.element {
+    color: #eee;
+}
+.btxt {
+    color: #111;
+}
+.toggle {
+    position: relative;
+}
+#footer {
+    text-align: center;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    height: 80px;
+    background-image: url("../img/bg.png");
+    box-shadow: 4px 0px 20px 0px #131313;
+    color: #fff;
+}
+@media(min-width:1000px) {
+    #footer {
         width: calc(100% - 15em);
         margin-left: 15em;
         /*display: block;*/
-      }
-  }
-  .mark {
+    }
+}
+.mark {
     display: inline-block;
     color: #39A0DD;
-  }
-  /* IE 6 */
-  
+}
+/* IE 6 */
+
 @import url(http://weloveiconfonts.com/api/?family=entypo);
-
 [class*="entypo-"]:before {
-  font-family: 'entypo', sans-serif;
+    font-family: 'entypo', sans-serif;
 }
-
 .post-middle a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Helvetica Neue", Helvetica, sans-serif;
-  text-align: center;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
 }
-
 #container {
-  float: left;
-  width: 1000px;
-  display: inline-block;
+    float: left;
+    width: 1000px;
+    display: inline-block;
 }
-
 .post {
-  font-family: 'Josefin Sans', sans-serif;
-  /*background: #fff;*/
-  border-radius: 3px;
-  width: 280;
-  margin: 30px 0px 0px 30px;
-  max-height: 216px;
-  float: left;
-  display: inline-block;
-  /*position:relative;*/
-
-  /*-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0 inset, rgba(0, 0, 0, 0.2) 0px 12px 20px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0 inset, rgba(0, 0, 0, 0.2) 0px 12px 20px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0 inset, rgba(0, 0, 0, 0.2) 0px 12px 20px;
-  *//* ACTIVATE EXPANDING OPTIONS */
+    border-radius: 3px;
+    width: 280;
+    /*margin: 30px 0px 0px 30px;*/
+    max-height: 216px;
+    float: left;
+    display: inline-block;
 }
-  @media(max-width: 700px) {
+@media(max-width: 700px) {
     .post {
-      width: 100%;
-      text-align: center;
+        width: 100%;
+        text-align: center;
     }
-  }
+}
 /*.post:hover .post-middle, .post:focus .post-middle, .post:active .post-middle {
   height: 40px;
   overflow: hidden;
   position:relative;
 }
 */
+
 .post-top {
-  position: relative;
-  display: block;
-  padding-top: 20px;
-  /*border-top: 4px solid #000;
+    position: relative;
+    display: block;
+    padding-top: 20px;
+    /*border-top: 4px solid #000;
   border-left: 4px solid #000;
   border-right: 4px solid #000;*/
-  padding-bottom: 5px;
-  z-index: 0;
+    
+    padding-bottom: 5px;
+    z-index: 0;
 }
-
 .post-top img {
-
-  width: 240px;
-  height: 140px;
-  border-radius: 2px;
-  margin-left: 17px;
-  z-index: 0;
+    width: 240px;
+    height: 140px;
+    border-radius: 2px;
+    margin-left: 17px;
+    z-index: 0;
 }
-
 .post-last {
-  /*border: 4px solid #000;*/
-  height: 50px;  
-  display: block;
-  z-index: 99;
-  position: relative;
+    /*border: 4px solid #000;*/
+    
+    height: 50px;
+    display: block;
+    z-index: 99;
+    position: relative;
 }
 .post-last h1 {
-  font-family: 'Josefin Sans', sans-serif;
-  margin-top: 2px;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 600;
+    margin-top: 2px;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
 }
 .post-last h2 {
-  /*width: 160px;*/
-  text-align: center;
-  font-size: 10px;
-  font-weight: 200;
-  margin-top: -15px;
-  text-transform: uppercase;
-  letter-spacing: .1em;
+    /*width: 160px;*/
+    
+    text-align: center;
+    font-size: 10px;
+    font-weight: 200;
+    margin-top: -15px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
 }
-
-  * html #footer {
-      position: absolute;
-      top: expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight: document.body.clientHeight)+(ignoreMe document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop))+'px');
-  }
+* html #footer {
+    position: absolute;
+    top: expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight: document.body.clientHeight)+(ignoreMe document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop))+'px');
+}
