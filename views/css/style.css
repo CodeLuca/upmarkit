@@ -24,7 +24,6 @@ body {
     background-image: url("../img/bg.png");
     color: #aaa;
     float: left;
-    position: absolute;
     width: 15em;
     position: fixed;
     background-color: #000;
@@ -33,7 +32,7 @@ body {
     /*float: left;*/
     
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     /*height: 100%;*/
     
     top: 0;
@@ -59,7 +58,6 @@ body {
   /*outline: 1px solid slategrey;*/
 }
 #cat {
-    -webkit-overflow-scrolling: touch;
     height: 66%;
     overflow: hidden;
     left: 0;
@@ -108,7 +106,7 @@ h2:hover {
     padding-right: 1em;
     padding-bottom: 80px;
     /*margin-top: 1em;*/
-    /*overflow: ;*/
+    overflow: auto;
     transition-duration: 0.3s;
 }
 p {
