@@ -70,8 +70,10 @@
   #content {
       position: fixed;
       height: 100%;
-      max-width: 1060px;
-      padding-left: 22em;
+      margin-left:auto;
+      margin-right:auto;
+      top:0; bottom:0;
+      padding-left: 15em;
       padding-right: 2em;
       padding-bottom: 2em;
       margin-top: 1em;
@@ -118,7 +120,7 @@
           font-size: 19px;
       }
       #content {
-          padding-left: 2em;
+          padding-left: 0px;
           margin-top: 5em;
           transition-duration: 0.3s;
       }
@@ -179,6 +181,99 @@
   }
   /* IE 6 */
   
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+.post-middle a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+}
+
+#container {
+  float: left;
+  width: 1000px;
+  display: inline-block;
+}
+
+.post {
+  font-family: 'Josefin Sans', sans-serif;
+  /*background: #fff;*/
+  border-radius: 3px;
+  width: 280;
+  margin: 30px 0px 0px 30px;
+  max-height: 216px;
+  float: left;
+  display: inline-block;
+  /*position:relative;*/
+
+  /*-webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0 inset, rgba(0, 0, 0, 0.2) 0px 12px 20px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0 inset, rgba(0, 0, 0, 0.2) 0px 12px 20px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 0 inset, rgba(0, 0, 0, 0.2) 0px 12px 20px;
+  *//* ACTIVATE EXPANDING OPTIONS */
+}
+  @media(max-width: 700px) {
+    .post {
+      width: 100%;
+      text-align: center;
+    }
+  }
+/*.post:hover .post-middle, .post:focus .post-middle, .post:active .post-middle {
+  height: 40px;
+  overflow: hidden;
+  position:relative;
+}
+*/
+.post-top {
+  position: relative;
+  display: block;
+  padding-top: 20px;
+  /*border-top: 4px solid #000;
+  border-left: 4px solid #000;
+  border-right: 4px solid #000;*/
+  padding-bottom: 5px;
+  z-index: 0;
+}
+
+.post-top img {
+
+  width: 240px;
+  height: 140px;
+  border-radius: 2px;
+  margin-left: 17px;
+  z-index: 0;
+}
+
+.post-last {
+  /*border: 4px solid #000;*/
+  height: 50px;  
+  display: block;
+  z-index: 99;
+  position: relative;
+}
+.post-last h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  margin-top: 2px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+.post-last h2 {
+  /*width: 160px;*/
+  text-align: center;
+  font-size: 10px;
+  font-weight: 200;
+  margin-top: -15px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
   * html #footer {
       position: absolute;
       top: expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight: document.body.clientHeight)+(ignoreMe document.documentElement.scrollTop ? document.documentElement.scrollTop: document.body.scrollTop))+'px');
