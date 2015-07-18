@@ -34,11 +34,6 @@ require('./backend/users')(app, db);
 require('./backend/creation')(app, db);
 require('./backend/routes')(app, db);
 
-//Index file path serves index.html
-app.get('/', function(req, res){
-	res.render('index');
-});
-
 //Start the server up!
 var port = 3000;
 app.listen(port);
