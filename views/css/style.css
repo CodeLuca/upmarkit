@@ -111,7 +111,15 @@ h2:hover {
     transition-duration: 0.3s;
 }
 
-input[type=text],input[type=password]{
+img {
+    /*width: 30;*/
+    height: 30%;
+    width: auto;
+  -webkit-box-shadow: 7px 5px 5px rgba(0,0,0,0.2); 
+  -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.2); 
+}
+
+input[type=text],input[type=password], textarea{
   width: 80%; 
   height: 39px; 
   -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 
@@ -125,6 +133,41 @@ input[type=text],input[type=password]{
   margin-left: -5px;
   margin-top: 13px; 
   padding-left: 10px;
+}
+
+button, .button, input[type=submit] {
+  margin-right: 10px;
+  border: 0;
+  background: #fff;
+  color: #2C2C2C;
+  padding: 8px 14px;
+  /*font-weight: bold;*/
+  font-size: 18px;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+}
+button:hover, button:focus, button.hover, button.focus, .button:hover, .button:focus, .button.hover, .button.focus, input[type=submit]:hover, input[type=submit]:focus, input[type=submit].hover, input[type=submit].focus {
+  transform: translate(2px, 2px);
+    -webkit-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+  -moz-box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+}
+button:active, button.active, .button:active, .button.active, input[type=submit]:active, input[type=submit].active {
+  transform: translate(4px, 4px);
+}
+
+.col {
+  width: 160px;
+  float: left;
+}
+
+
+textarea {
+    resize: none;
+    padding-top: 10px;
+    height: 150px;
 }
 
 input[type=password]{
@@ -179,6 +222,9 @@ input[type=checkbox]:checked + label {
     z-index: 99999;
 }
 @media(max-width:1000px) {
+    #addVideo img {
+        margin-right: 1em;
+    }
     #footer li {
         line-height: 17px;
         padding-top: 15px;
