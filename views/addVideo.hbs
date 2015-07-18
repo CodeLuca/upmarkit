@@ -1,0 +1,102 @@
+<head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<div id="sidebar">
+  <ul class="nav-elements">
+    <!-- <img src="img/logo.png" id="logo">-->
+    <a href="#" class="link"><h1 class="name">Up<div class="mark">Mark</div>it</h1></a>
+        <hr style="width:80%; margin-right: 100px; margin-top: 0px; margin-bottom: 20px">
+    <div id="cat">
+    <a href="/cat/topvideos" class="link">
+      <li class="element">Top Videos</li>
+    </a>
+    <br>
+    <a href="/cat/comedy" class="link">
+      <li class="element">Comedy</li>
+    </a>
+    <br>
+    <a href="/cat/sports" class="link">
+      <li class="element">Sports</li>
+    </a>
+    <br>
+    <a href="/cat/music" class="link">
+      <li class="element">Music</li>
+    </a>
+    <br>
+    <a href="/cat/gaming" class="link">
+      <li class="element">Gaming</li>
+    </a>
+    <br>
+    <a href="/cat/kids" class="link">
+      <li class="element">Kids</li>
+    </a>
+    <br>
+    <a href="/cat/news" class="link">
+      <li class="element">News</li>
+    </a>
+    <br>
+    <a href="/cat/animation" class="link">
+      <li class="element">Animation</li>
+    </a>
+    <br>
+    <a href="/cat/education" class="link">
+      <li class="element">Education</li>
+    </a>
+    <br>
+    <a href="/cat/education" class="link">
+      <li class="element">sdf</li>
+    </a>
+    </div>
+  </ul>
+</div>
+<header id="header">
+  <!--<img src="img/minilogo.png" id="minilogo">-->
+  <input type="checkbox" name="toggle" id="toggle" onchange='handleChange(this)' unchecked>
+  <label for="toggle"></label>
+</header>
+<div id="addVideo">
+  <br>
+  <center>
+  <h1>Add a Video.</h1>
+  <!-- <br> -->
+  <input type="text" name="url" placeholder="Youtube full URL, e.g: https://www.youtube.com/watch?v=HSs6iQwTTcY">
+</div>
+<div id="footer">
+      <a href="/cat/animation" class="link">
+      <li class="element e">Add a Video</li>
+    </a>
+      <a href="/cat/animation" class="link">
+      <li class="element e">Settings</li>
+    </a>
+    <a href="/cat/favorites" class="link">
+      <li class="element e">Favorites</li>
+    </a>
+</div>
+</div>
+
+<script type="text/javascript">
+function handleChange(cb) {
+  if (cb.checked == true) {
+    document.getElementById("sidebar").style.left = "0em";
+  } else {
+    document.getElementById("sidebar").style.left = "-19em";
+  }
+}
+
+window.onresize = function rs() {
+  var cb = document.getElementById("toggle");
+  if (window.matchMedia("(max-width: 1000px)").matches && cb.checked == false) {
+    document.getElementById("sidebar").style.left = "-20em";
+  }
+  if (window.matchMedia("(min-width: 1000px)").matches && cb.checked == true) {
+    document.getElementById("sidebar").style.left = "0em";
+    cb.checked = false;
+  }
+  if (window.matchMedia("(min-width:1000px)").matches && cb.checked == false) {
+    document.getElementById("sidebar").style.left = "0em";
+
+  }
+
+}
+</script>
