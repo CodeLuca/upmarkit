@@ -58,16 +58,17 @@ body {
 }
 #cat {
     height: 66%;
-    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    overflow: auto;
     left: 0;
     right: 0;
     top: 60px;
     bottom: 60px;
 }
-#cat:hover {
+/*#cat:hover {
     -webkit-overflow-scrolling: touch;
     overflow: auto;
-}
+*/}
 .element:hover {
     color: #39A0DD;
     transition-duration: 0.3s;
