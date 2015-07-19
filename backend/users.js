@@ -67,7 +67,7 @@ module.exports = function(app, db) {
 			} else {
 				//Otherwise redirect them to their home.
 				req.session.username = user;
-				res.redirect('/home')
+				res.redirect('/');
 			}
 		});
 	});

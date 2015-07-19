@@ -105,7 +105,7 @@ h2:hover {
     bottom: 0;
     padding-left: 15em;
     padding-right: 1em;
-    padding-bottom: 80px;
+    padding-bottom: 100px;
     /*margin-top: 1em;*/
     overflow: auto;
     transition-duration: 0.3s;
@@ -119,7 +119,7 @@ img {
   -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.2); 
 }
 
-input[type=text],input[type=password], textarea{
+input[type=text],input[type=password], textarea, select{
   width: 80%; 
   height: 39px; 
   -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 

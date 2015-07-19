@@ -1,6 +1,7 @@
 <head>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 </head>
 <div id="sidebar">
   <ul class="nav-elements">
@@ -60,10 +61,30 @@
   <center>
   <h1>Add a Video.</h1>
   <!-- <br> -->
-  <input type="text" name="url" placeholder="Youtube full URL"><br><br>
-  <textarea rows="4" cols="50" placeholder="Video Description"></textarea><br><br><br>
+  <input id="url" type="text" name="url" placeholder="Youtube full URL"><br><br>
+
+  <select>
+    <option value="Select a category." selected disabled>Select a category.</option>
+    <option value="Autos and Vehicles">Autos and Vehicles</option>
+    <option value="Comedy">Comedy</option>
+    <option value="Education">Education</option>
+    <option value="Gaming">Gaming</option>
+    <option value="Howto & Style">Howto & Style</option>
+    <option value="Music">Music</option>
+    <option value="News & Politics">News & Politics</option>
+    <option value="Nonprofits & Activism">Nonprofits & Activism</option>
+    <option value="Music">Music</option>
+    <option value="News & Politics">News & Politics</option>
+    <option value="Pets & Animals">Pets & Animals</option>
+    <option value="Science & Technology">Science & Technology</option>
+    <option value="Sports">Sports</option>
+    <option value="Travel & Events">Travel & Events</option>
+    <option value="Film & Animation">Film & Animation</option>
+  </select>
+  
+  <br><br>
   <button onclick="checkImage()">Preview Thumbnail</button>
-  <button onclick="checkImage()">Add Video</button>
+  <button>Add Video</button>
   <br>
   <br>
   <img id="check" src="http://img.youtube.com/vi/videotitlehere/hqdefault.jpg">
@@ -90,6 +111,21 @@ function handleChange(cb) {
   } else {
     document.getElementById("sidebar").style.left = "-19em";
   }
+}
+
+function checkImage() {
+    var code = $('#url').val();
+    var a = code.split('');
+    if(a[0] == 'h') {
+        a.splice(0, 32);
+    } else if(a[0] == 'w') {
+        a.splice(i, 24);
+      };
+    if(a.length > 11) {
+      a.splice(11, (a.length - 11));
+    }
+    var code = a.join('');
+    $('#check').attr('src', 'http://img.youtube.com/vi/' + code + '/hqdefault.jpg');
 }
 
 window.onresize = function rs() {
