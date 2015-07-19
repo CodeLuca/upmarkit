@@ -6,48 +6,61 @@
 <div id="sidebar">
   <ul class="nav-elements">
     <!-- <img src="img/logo.png" id="logo">-->
-    <a href="#" class="link"><h1 class="name">Up<div class="mark">Mark</div>it</h1></a>
-        <hr style="width:80%; margin-right: 100px; margin-top: 0px; margin-bottom: 20px">
+    <a href="/" class="link"><h1 class="name">Up<div class="mark">Mark</div>it</h1></a>
+    <hr style="width:80%; margin-right: 100px; margin-top: 0px; margin-bottom: 20px">
     <div id="cat">
-    <a href="/cat/topvideos" class="link">
-      <li class="element">Top Videos</li>
-    </a>
-    <br>
-    <a href="/cat/comedy" class="link">
-      <li class="element">Comedy</li>
-    </a>
-    <br>
-    <a href="/cat/sports" class="link">
-      <li class="element">Sports</li>
-    </a>
-    <br>
-    <a href="/cat/music" class="link">
-      <li class="element">Music</li>
-    </a>
-    <br>
-    <a href="/cat/gaming" class="link">
-      <li class="element">Gaming</li>
-    </a>
-    <br>
-    <a href="/cat/kids" class="link">
-      <li class="element">Kids</li>
-    </a>
-    <br>
-    <a href="/cat/news" class="link">
-      <li class="element">News</li>
-    </a>
-    <br>
-    <a href="/cat/animation" class="link">
-      <li class="element">Animation</li>
-    </a>
-    <br>
-    <a href="/cat/education" class="link">
-      <li class="element">Education</li>
-    </a>
-    <br>
-    <a href="/cat/education" class="link">
-      <li class="element">sdf</li>
-    </a>
+      <a href="/" class="link">
+        <li class="element">Top Videos</li>
+      </a>
+      <br>
+      <a href="/cat/Autos and Vehicles" class="link">
+        <li class="element">Autos and Vehicles</li>
+      </a>
+      <br>
+      <a href="/cat/Comedy" class="link">
+        <li class="element">Comedy</li>
+      </a>
+      <br>
+      <a href="/cat/Education" class="link">
+        <li class="element">Education</li>
+      </a>
+      <br>
+      <a href="/cat/Gaming" class="link">
+        <li class="element">Gaming</li>
+      </a>
+      <br>
+      <a href="/cat/Howto & Style" class="link">
+        <li class="element">Howto & Style</li>
+      </a>
+      <br>
+      <a href="/cat/Music" class="link">
+        <li class="element">Music</li>
+      </a>
+      <br>
+      <a href="/cat/News & Politics" class="link">
+        <li class="element">News & Politics</li>
+      </a>
+      <br>
+      <a href="/cat/Nonprofits & Activism" class="link">
+        <li class="element">Nonprofits & Activism</li>
+      </a>
+      <br>
+      <a href="/cat/Pets & Animals" class="link">
+        <li class="element">Pets & Animals</li>
+      </a>
+      <a href="/cat/Science & Technology" class="link">
+        <li class="element">Science & Technology</li>
+      </a>
+      <a href="/cat/Sports" class="link">
+        <li class="element">Sports</li>
+      </a>
+      <br>
+      <a href="/cat/Travel & Events" class="link">
+        <li class="element">Travel & Events</li>
+      </a>
+      <a href="/cat/Film & Animation" class="link">
+        <li class="element">Film & Animation</li>
+      </a>
     </div>
   </ul>
 </div>
@@ -59,88 +72,126 @@
 <div id="addVideo">
   <br>
   <center>
-  <h1>Add a Video.</h1>
-  <!-- <br> -->
-  <input id="url" type="text" name="url" placeholder="Youtube full URL"><br><br>
+    <h1>Add a Video.<br>{{err}}</h1>
+    <!-- <br> -->
+    <input id="url" type="text" name="url" placeholder="Youtube full URL">
+    <br>
+    <br>
 
-  <select>
-    <option value="Select a category." selected disabled>Select a category.</option>
-    <option value="Autos and Vehicles">Autos and Vehicles</option>
-    <option value="Comedy">Comedy</option>
-    <option value="Education">Education</option>
-    <option value="Gaming">Gaming</option>
-    <option value="Howto & Style">Howto & Style</option>
-    <option value="Music">Music</option>
-    <option value="News & Politics">News & Politics</option>
-    <option value="Nonprofits & Activism">Nonprofits & Activism</option>
-    <option value="Music">Music</option>
-    <option value="News & Politics">News & Politics</option>
-    <option value="Pets & Animals">Pets & Animals</option>
-    <option value="Science & Technology">Science & Technology</option>
-    <option value="Sports">Sports</option>
-    <option value="Travel & Events">Travel & Events</option>
-    <option value="Film & Animation">Film & Animation</option>
-  </select>
-  
-  <br><br>
-  <button onclick="checkImage()">Preview Thumbnail</button>
-  <button>Add Video</button>
-  <br>
-  <br>
-  <img id="check" src="http://img.youtube.com/vi/videotitlehere/hqdefault.jpg">
+    <select id="category">
+      <option value="Select a category." selected disabled>Select a category.</option>
+      <option value="Autos and Vehicles">Autos and Vehicles</option>
+      <option value="Comedy">Comedy</option>
+      <option value="Education">Education</option>
+      <option value="Gaming">Gaming</option>
+      <option value="Howto & Style">Howto & Style</option>
+      <option value="Music">Music</option>
+      <option value="News & Politics">News & Politics</option>
+      <option value="Nonprofits & Activism">Nonprofits & Activism</option>
+      <option value="Music">Music</option>
+      <option value="News & Politics">News & Politics</option>
+      <option value="Pets & Animals">Pets & Animals</option>
+      <option value="Science & Technology">Science & Technology</option>
+      <option value="Sports">Sports</option>
+      <option value="Travel & Events">Travel & Events</option>
+      <option value="Film & Animation">Film & Animation</option>
+    </select>
 
-  </div>
+    <br>
+    <br>
+    <button type="button" onclick="checkImage()">Preview Thumbnail</button>
+    <button type="button" onclick="send()" style="display: inline-block">Add Video</button>
+    <br>
+    <br>
+    <img id="check" src="http://img.youtube.com/vi/videotitlehere/hqdefault.jpg">
+
+</div>
 </div>
 <div id="footer">
-      <a href="/cat/animation" class="link">
-      <li class="element e">Add a Video</li>
-    </a>
-      <a href="/cat/animation" class="link">
-      <li class="element e">Settings</li>
-    </a>
-    <a href="/cat/favorites" class="link">
-      <li class="element e">Favorites</li>
-    </a>
+  <a href="/cat/animation" class="link">
+    <li class="element e">Add a Video</li>
+  </a>
+  <a href="/cat/animation" class="link">
+    <li class="element e">Settings</li>
+  </a>
+  <a href="/cat/favorites" class="link">
+    <li class="element e">Favorites</li>
+  </a>
+  <a href="/logout" class="link">
+    <li class="element e">Logout</li>
+  </a>
 </div>
 </div>
 
 <script type="text/javascript">
-function handleChange(cb) {
-  if (cb.checked == true) {
-    document.getElementById("sidebar").style.left = "0em";
-  } else {
-    document.getElementById("sidebar").style.left = "-19em";
+  function handleChange(cb) {
+    if (cb.checked == true) {
+      document.getElementById("sidebar").style.left = "0em";
+    } else {
+      document.getElementById("sidebar").style.left = "-19em";
+    }
   }
-}
 
-function checkImage() {
+  function send() {
+    var obj
+    var id = checkImage();
+    var str = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + id + '&key=AIzaSyDXCn4rCMe3glOZ5bDDazJPd0WY4xmCOg0';
+    $.get(str, function(body){
+      obj = {
+        'title': body.items[0].snippet.title,
+        'id': id,
+        'link': $('#url').val(),
+        'category': $('#category').val()
+      }
+      $.post('/addVideo', obj, function(data){
+        if(data != '200'){
+          alert(data);
+        }
+        location = '/';
+      });
+    });
+  }
+
+  function wordInString(s, word){
+    return new RegExp( '\\b' + word + '\\b', 'i').test(s);
+  }
+
+  function checkImage() {
     var code = $('#url').val();
+    if(wordInString(code, 'youtube.com') == false){
+      location.reload();
+    }
     var a = code.split('');
-    if(a[0] == 'h') {
-        a.splice(0, 32);
-    } else if(a[0] == 'w') {
-        a.splice(i, 24);
-      };
-    if(a.length > 11) {
+    if (a[0] == 'h') {
+      a.splice(0, 32);
+    } else if (a[0] == 'w') {
+      a.splice(i, 24);
+    } else {
+      location.reload();
+    }
+    if (a.length > 11) {
       a.splice(11, (a.length - 11));
+    } else if (a.length < 11) {
+      location.reload();
     }
     var code = a.join('');
     $('#check').attr('src', 'http://img.youtube.com/vi/' + code + '/hqdefault.jpg');
-}
-
-window.onresize = function rs() {
-  var cb = document.getElementById("toggle");
-  if (window.matchMedia("(max-width: 1000px)").matches && cb.checked == false) {
-    document.getElementById("sidebar").style.left = "-20em";
-  }
-  if (window.matchMedia("(min-width: 1000px)").matches && cb.checked == true) {
-    document.getElementById("sidebar").style.left = "0em";
-    cb.checked = false;
-  }
-  if (window.matchMedia("(min-width:1000px)").matches && cb.checked == false) {
-    document.getElementById("sidebar").style.left = "0em";
-
+    return code;
   }
 
-}
+  window.onresize = function rs() {
+    var cb = document.getElementById("toggle");
+    if (window.matchMedia("(max-width: 1000px)").matches && cb.checked == false) {
+      document.getElementById("sidebar").style.left = "-20em";
+    }
+    if (window.matchMedia("(min-width: 1000px)").matches && cb.checked == true) {
+      document.getElementById("sidebar").style.left = "0em";
+      cb.checked = false;
+    }
+    if (window.matchMedia("(min-width:1000px)").matches && cb.checked == false) {
+      document.getElementById("sidebar").style.left = "0em";
+
+    }
+
+  }
 </script>

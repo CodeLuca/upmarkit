@@ -13,7 +13,7 @@ var expressHbs = require('express-handlebars');
 
 //Require everything MongoDB Related.
 var mongojs = require('mongojs');
-var db = mongojs('mongodb://localhost:27017/upmarkit', ['users']);
+var db = mongojs('mongodb://localhost:27017/upmarkit', ['users', 'videos']);
 
 //Enable Handlebars & set default layout
 app.engine('hbs', expressHbs({extname:'hbs', defaultLayout:'main.hbs'}));

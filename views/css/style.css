@@ -18,8 +18,8 @@ body {
     font-size: 30px;
 }
 #sidebar li {
-    font-size: 35px;
-    line-height: 50px;
+    font-size: 20px;
+    line-height: 30px;
 }
 #sidebar {
     background-image: url("../img/bg.png");
@@ -260,7 +260,7 @@ input[type=checkbox]:checked + label {
 }
 .element {
     margin: 0em;
-    font-size: 150%;
+    font-size: 2px;
     line-height: 2em;
     /*width: 100%;*/
     color: #eee;
@@ -318,10 +318,10 @@ input[type=checkbox]:checked + label {
 .post {
     border-radius: 3px;
     width: 280;
-    /*margin: 30px 0px 0px 30px;*/
     max-height: 216px;
     float: left;
     display: inline-block;
+    padding-bottom: 15px
 }
 @media(max-width: 700px) {
     .post {
@@ -356,13 +356,14 @@ input[type=checkbox]:checked + label {
 }
 .post-last {
     /*border: 4px solid #000;*/
-    
+    margin-bottom: 10px;
     height: 50px;
     display: block;
     z-index: 99;
     position: relative;
 }
 .post-last h1 {
+    overflow: auto;
     margin-top: 2px;
     text-align: center;
     font-size: 22px;
@@ -370,7 +371,6 @@ input[type=checkbox]:checked + label {
 }
 .post-last h2 {
     /*width: 160px;*/
-    
     text-align: center;
     font-size: 10px;
     font-weight: 200;
