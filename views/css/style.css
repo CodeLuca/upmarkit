@@ -113,8 +113,8 @@ h2:hover {
 
 img {
     /*width: 30;*/
-    height: 30%;
-    width: auto;
+  height: 30%;
+  width: auto;
   -webkit-box-shadow: 7px 5px 5px rgba(0,0,0,0.2); 
   -moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.2); 
 }
@@ -317,7 +317,7 @@ input[type=checkbox]:checked + label {
 }
 .post {
     border-radius: 3px;
-    width: 280;
+    width: 260;
     max-height: 216px;
     float: left;
     display: inline-block;

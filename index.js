@@ -23,6 +23,23 @@ app.set('view engine', 'hbs');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+//Categories
+var categories = [
+	'Autos and Vehicles',
+	'Comedy',
+	'Education',
+	'Gaming',
+	'Howto & Style',
+	'Music',
+	'News & Politics',
+	'Nonprofits & Activism',
+	'Pets & Animals',
+	'Science & Technology',
+	'Sports',
+	'Travel & Events',
+	'Film & Animation'
+]
+
 //Enable Express-Sessions with this secret to encrypt:
 app.use(session({secret: '871238971AIHLJS'}));
 
@@ -32,7 +49,7 @@ app.use(express.static(__dirname + '/views'));
 //Require all of the Node files needed:
 require('./backend/users')(app, db);
 require('./backend/creation')(app, db);
-require('./backend/routes')(app, db);
+require('./backend/routes')(app, db, categories);
 
 //Start the server up!
 var port = 3000;

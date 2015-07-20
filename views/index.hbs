@@ -1,6 +1,6 @@
 <head>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
 </head>
 <div id="sidebar">
   <ul class="nav-elements">
@@ -52,7 +52,7 @@
       </a>
       <a href="/cat/Sports" class="link">
         <li class="element">Sports</li>
-      </a>
+      </a><br>
       <a href="/cat/Travel & Events" class="link">
         <li class="element">Travel & Events</li>
       </a>
@@ -67,7 +67,7 @@
   <label for="toggle"></label>
 </header>
 <div id="content">
-{{#each videos}}
+{{#each obj}}
 <div class="post">
   <div class="post-top">
     <img src="http://img.youtube.com/vi/{{id}}/hqdefault.jpg" alt="" />
