@@ -1,0 +1,204 @@
+<head>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+</head>
+<div id="sidebar">
+  <ul class="nav-elements">
+    <!-- <img src="img/logo.png" id="logo">-->
+    <a href="/" class="link"><h1 class="name">Up<div class="mark">Mark</div>it</h1></a>
+    <hr style="width:80%; margin-right: 100px; margin-top: 0px; margin-bottom: 20px">
+    <div id="cat">
+      <a href="/" class="link">
+        <li class="element">Top Videos</li>
+      </a>
+      <br>
+      <a href="/cat/Autos and Vehicles" class="link">
+        <li class="element">Autos and Vehicles</li>
+      </a>
+      <br>
+      <a href="/cat/Comedy" class="link">
+        <li class="element">Comedy</li>
+      </a>
+      <br>
+      <a href="/cat/Education" class="link">
+        <li class="element">Education</li>
+      </a>
+      <br>
+      <a href="/cat/Gaming" class="link">
+        <li class="element">Gaming</li>
+      </a>
+      <br>
+      <a href="/cat/Howto & Style" class="link">
+        <li class="element">Howto & Style</li>
+      </a>
+      <br>
+      <a href="/cat/Music" class="link">
+        <li class="element">Music</li>
+      </a>
+      <br>
+      <a href="/cat/News & Politics" class="link">
+        <li class="element">News & Politics</li>
+      </a>
+      <br>
+      <a href="/cat/Nonprofits & Activism" class="link">
+        <li class="element">Nonprofits & Activism</li>
+      </a>
+      <br>
+      <a href="/cat/Pets & Animals" class="link">
+        <li class="element">Pets & Animals</li>
+      </a>
+      <a href="/cat/Science & Technology" class="link">
+        <li class="element">Science & Technology</li>
+      </a>
+      <a href="/cat/Sports" class="link">
+        <li class="element">Sports</li>
+      </a>
+      <br>
+      <a href="/cat/Travel & Events" class="link">
+        <li class="element">Travel & Events</li>
+      </a><br>
+      <a href="/cat/Film & Animation" class="link">
+        <li class="element">Film & Animation</li>
+      </a>
+    </div>
+  </ul>
+</div>
+<header id="header">
+  <!--<img src="img/minilogo.png" id="minilogo">-->
+  <input type="checkbox" name="toggle" id="toggle" onchange='handleChange(this)' unchecked>
+  <label for="toggle"></label>
+</header>
+<div id="addVideo">
+  <br>
+  <center>
+    <h1>{{data.title}}</h1>
+    <h3><b>Category: </b>{{data.category}} - Rating: {{data.average}}</h3>
+<span class="star-rating">
+  <input type="radio" name="rating" value="1"><i></i>
+  <input type="radio" name="rating" value="2"><i></i>
+  <input type="radio" name="rating" value="3"><i></i>
+  <input type="radio" name="rating" value="4"><i></i>
+  <input type="radio" name="rating" value="5"><i></i>
+</span>
+<strong class="choice">Choose a rating</strong>
+<div class="youtube-iframe-div">
+  <iframe class="youtube-iframe" width="100%" src="//www.youtube.com/embed/{{data.id}}" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+<div id="footer">
+  <a href="/cat/animation" class="link">
+    <li class="element e">Add a Video</li>
+  </a>
+  <a href="/cat/animation" class="link">
+    <li class="element e">Settings</li>
+  </a>
+  <a href="/cat/favorites" class="link">
+    <li class="element e">Favorites</li>
+  </a>
+  <a href="/logout" class="link">
+    <li class="element e">Logout</li>
+  </a>
+</div>
+</div>
+
+<script type="text/javascript">
+  function handleChange(cb) {
+    if (cb.checked == true) {
+      document.getElementById("sidebar").style.left = "0em";
+    } else {
+      document.getElementById("sidebar").style.left = "-19em";
+    }
+  }
+
+  function send() {
+    var obj
+    var id = checkImage();
+    var str = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + id + '&key=AIzaSyDXCn4rCMe3glOZ5bDDazJPd0WY4xmCOg0';
+    $.get(str, function(body){
+      obj = {
+        'title': body.items[0].snippet.title,
+        'id': id,
+        'link': $('#url').val(),
+        'category': $('#category').val()
+      }
+      $.post('/addVideo', obj, function(data){
+        if(data != '200'){
+          alert(data);
+        }
+        location = '/';
+      });
+    });
+  }
+
+  function wordInString(s, word){
+    return new RegExp( '\\b' + word + '\\b', 'i').test(s);
+  }
+
+  function checkImage() {
+    var code = $('#url').val();
+    if(wordInString(code, 'youtube.com') == false){
+      location.reload();
+    }
+    var a = code.split('');
+    if (a[0] == 'h') {
+      a.splice(0, 32);
+    } else if (a[0] == 'w') {
+      a.splice(i, 24);
+    } else {
+      location.reload();
+    }
+    if (a.length > 11) {
+      a.splice(11, (a.length - 11));
+    } else if (a.length < 11) {
+      location.reload();
+    }
+    var code = a.join('');
+    $('#check').attr('src', 'http://img.youtube.com/vi/' + code + '/hqdefault.jpg');
+    return code;
+  }
+
+  window.onresize = function rs() {
+    var cb = document.getElementById("toggle");
+    if (window.matchMedia("(max-width: 1000px)").matches && cb.checked == false) {
+      document.getElementById("sidebar").style.left = "-20em";
+    }
+    if (window.matchMedia("(min-width: 1000px)").matches && cb.checked == true) {
+      document.getElementById("sidebar").style.left = "0em";
+      cb.checked = false;
+    }
+    if (window.matchMedia("(min-width:1000px)").matches && cb.checked == false) {
+      document.getElementById("sidebar").style.left = "0em";
+
+    }
+
+  }
+  $(function(){
+   if (window.matchMedia("(max-width: 1000px)").matches) {
+      document.getElementById("sidebar").style.left = "-20em";
+      cb.checked = false;
+    }
+  });
+
+  var youtubeIFrame = document.getElementsByClassName("youtube-iframe");
+
+  // Doing as follows is better than window.onresize = function () {}, which overrides the onresize event and thus might interfere with other functions. The same goes for onload –> 'load'  
+  window.addEventListener('resize', function() {
+    var i;
+    for (i = 0; i < youtubeIFrame.length; i++) {
+      youtubeIFrame[i].style.height = youtubeIFrame[0].clientWidth * 0.5625 + "px";
+    }
+  });
+
+  var i;
+  for (i = 0; i < youtubeIFrame.length; i++) {
+    youtubeIFrame[i].style.height = youtubeIFrame[0].clientWidth * 0.5625 + "px";
+  }
+
+  $(':radio').change(
+  function(){
+    $('.choice').text( this.value + ' stars' );
+  } 
+)
+</script>

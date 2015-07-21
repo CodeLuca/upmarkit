@@ -49,6 +49,7 @@ app.use(express.static(__dirname + '/views'));
 //Require all of the Node files needed:
 require('./backend/users')(app, db);
 require('./backend/creation')(app, db);
+require('./backend/view')(app, db);
 require('./backend/routes')(app, db, categories);
 
 //Start the server up!

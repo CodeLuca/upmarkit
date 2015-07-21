@@ -68,6 +68,7 @@
 </header>
 <div id="content">
 {{#each obj}}
+<a href="/view/{{id}}">
 <div class="post">
   <div class="post-top">
     <img src="http://img.youtube.com/vi/{{id}}/hqdefault.jpg" alt="" />
@@ -77,6 +78,7 @@
       <h2>Rating: {{average}}</h2>
   </div> 
 </div>
+</a>
 {{/each}}
 
 

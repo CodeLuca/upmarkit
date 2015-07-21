@@ -17,14 +17,12 @@ module.exports = function(app, db, categories) {
 				};
 				obj[categories[i]] = current;
 			}
-			console.log(obj);
 			var l;
 			if(req.session.username){
 				l = 'Logout';
 			} else {
 				l = 'Login';
 			}
-			// console.log(obj);
 			res.render('index', {
 				'l': '<a href="/' + l + '" class="link"><li class="element e">' + l + '</li></a>',
 				'obj': docs
