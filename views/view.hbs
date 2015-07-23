@@ -1,7 +1,7 @@
 <head>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="stylesheet" type="text/css" href="../css/style.css">
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="/js/jquery.js"></script>
 </head>
 <div id="sidebar">
   <ul class="nav-elements">
@@ -88,7 +88,7 @@
 </div>
 </div>
 <div id="footer">
-  <a href="/cat/animation" class="link">
+  <a href="/addVideo" class="link">
     <li class="element e">Add a Video</li>
   </a>
   <a href="/cat/animation" class="link">
@@ -96,9 +96,6 @@
   </a>
   <a href="/cat/favorites" class="link">
     <li class="element e">Favorites</li>
-  </a>
-  <a href="/logout" class="link">
-    <li class="element e">Logout</li>
   </a>
 </div>
 </div>
@@ -198,7 +195,14 @@
 
   $(':radio').change(
   function(){
-    $('.choice').text( this.value + ' stars' );
+    var n = this.value;
+    $.get('/vote/{{data.id}}/' + n, function(data) {
+      if(data != '200') {
+        alert(data);
+        location.reload();
+      }
+      $('.choice').text( n + ' stars' );
+    });
   } 
 )
 </script>

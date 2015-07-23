@@ -1,7 +1,7 @@
 <head>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="/js/jquery.js"></script>
 </head>
 <div id="sidebar">
   <ul class="nav-elements">
@@ -78,8 +78,8 @@
     <br>
     <br>
 
-    <select id="category">
-      <option value="Select a category." selected disabled>Select a category.</option>
+    <select id="category" required>
+      <option value="" selected disabled>Select a category.</option>
       <option value="Autos and Vehicles">Autos and Vehicles</option>
       <option value="Comedy">Comedy</option>
       <option value="Education">Education</option>
@@ -133,7 +133,10 @@
   }
 
   function send() {
-    var obj
+    if($("#category").val() == null){
+      location.reload();
+    }
+    var obj;
     var id = checkImage();
     var str = 'https://www.googleapis.com/youtube/v3/videos?part=snippet&id=' + id + '&key=AIzaSyDXCn4rCMe3glOZ5bDDazJPd0WY4xmCOg0';
     $.get(str, function(body){

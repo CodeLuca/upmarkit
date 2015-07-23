@@ -51,6 +51,7 @@ require('./backend/users')(app, db);
 require('./backend/creation')(app, db);
 require('./backend/view')(app, db);
 require('./backend/routes')(app, db, categories);
+require('./backend/vote')(app, db);
 
 //Start the server up!
 var port = 3000;

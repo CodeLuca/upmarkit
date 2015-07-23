@@ -48,7 +48,6 @@ module.exports = function(app, db, categories) {
 				};
 				obj[categories[i]] = current;
 			}
-			console.log(obj);
 			var l;
 			if(req.session.username){
 				l = 'Logout';
