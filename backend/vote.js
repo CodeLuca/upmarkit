@@ -1,10 +1,26 @@
 module.exports = function(app, db) {
+//Get Number of Stars
+	app.get('/getStars/:id', function(req, res){
+		if(!req.session.username) {
+			res.send("0");
+			return;
+		}
+		db.users.find({
+			'username': req.session.username
+		}, function(err, docs) {
+			docs[0].votes.forEach(function(item) {
+				if(item.id == req.params.id) {
+					res.send(item.amount);
+				}
+			});
+		});
+	});
 //Get request to vote
 	app.get('/vote/:id/:number', function(req, res) {
 		//Check if logged in
 		if(!req.session.username) {
 			//If not tell them.
-			res.send('Please login in order to vote.');
+			res.send('redirect');
 			return;
 		}
 		//Check if they have already voted for this before.
@@ -28,7 +44,7 @@ module.exports = function(app, db) {
 		});
 
 		function correct() {
-			var current;
+			var current, old;
 			//Get the current vote list
 			db.users.find({
 				'username': req.session.username
@@ -38,7 +54,8 @@ module.exports = function(app, db) {
 				current.votes.forEach(function(item){
 					//Check that's the one.
 					if(item.id == req.params.id) {
-						item.amount = req.params.number
+						old = item.amount;
+						item.amount = req.params.number;
 					}
 	 			});
 	 			//Add that back to their object.
@@ -50,19 +67,45 @@ module.exports = function(app, db) {
 	 					'votes': current['votes']
 	 				}
 	 			});
+	 			var newArray = [];
+	 			//Find the videos
+	 			db.videos.find({
+	 				'id': req.params.id
+	 			}, function(err, docs) {
+	 				for(var i = 0; i < docs[0].ratings.length; i++) {
+	 					if(docs[0].ratings[i].user == req.session.username) {
+	 						docs[0].ratings[i].amount = req.params.number;
+	 						newArray = docs[0].ratings;
+	 					}
+	 				}
+	 				set();
+	 			});
+
+	 			function set(){
+		 			db.videos.update({
+		 				'id': req.params.id
+		 			}, {
+		 				$set: {
+		 					'ratings': newArray
+		 				}
+		 			}, function(err, docs) {
+						update();
+		 			});
+	 			}
 			});
 		}
 
 		function addToArray() {
+			var obj = {
+						"id": req.params.id,
+						"amount": req.params.number
+					}
 			//Adding to Users votes array
 			db.users.update({
 				"username": req.session.username
 			}, {
 				$push: {
-					"votes": {
-						"id": req.params.id,
-						"amount": req.params.number
-					}
+					"votes": obj
 				}
 			});
 			//Add to video's Votes array.
@@ -70,9 +113,38 @@ module.exports = function(app, db) {
 				"id": req.params.id
 			}, {
 				$push: {
-					"ratings": req.params.number
+					"ratings": {
+						'user': req.session.username,
+						'amount': req.params.number
+					}
 				}
-			})
+			}, function(err, docs) {
+				update();
+			});
+		}
+
+		function update() {
+		//Update average.
+		db.videos.find({
+			'id': req.params.id
+		}, function(err, docs) {
+			var count = 0;
+			docs[0].ratings.forEach(function(data) {
+				count = count + Number(data.amount);
+			});
+			console.log('count: ' + count)
+			console.log('length: ' + docs[0].ratings.length);
+			var average = (count / docs[0].ratings.length);
+			db.videos.update({
+				'id': req.params.id
+			}, {
+				$set: {
+					'average': average
+				}
+			}, function(err, data) {
+				// res.send();	
+			});
+		});
 		}
 	});
 }

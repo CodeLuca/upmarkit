@@ -7,16 +7,8 @@ module.exports = function(app, db, categories) {
 		});
 
 		function display(docs) {
-			var obj = {};
-			for(i = 0; i < categories.length; i++) {
-				var current = [];
-				for (var o = 0; o < docs.length; o++) {
-					if(docs[o].category == categories[i]) {
-						current.push(docs[o]);
-					}
-				};
-				obj[categories[i]] = current;
-			}
+			var sorted = [];
+			
 			var l;
 			if(req.session.username){
 				l = 'Logout';
